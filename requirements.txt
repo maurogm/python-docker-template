@@ -1,0 +1,16 @@
+# To add a package to the requirements after installing it,
+# you can get the version by running "pip list" or "pip freeze"
+
+# VSCode:
+black==20.8b1 # formatting
+pylint==2.6.0 # linting
+
+# Data Science:
+jupyter==1.0.0
+pandas==1.2.0
+
+# Testing:
+pytest==6.2.2
+
+# Other:
+#pyarrow==2.0.0 # required for pd.read_parcket. Doesn't work in python > 3.7

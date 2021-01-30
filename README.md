@@ -73,10 +73,9 @@ By default it contains some paths configuring the linter and the formatter, as w
 
 - If you are using a library for unit testing, you have to enable it here. Beware that only one among unittest, pytest and nosetest can be enabled at once. Refer to [the documentation](https://code.visualstudio.com/docs/python/testing#_test-configuration-settings) to see how to configure your testing framework of choice.
 
-For example, if we want to use `pytest` and the source code is located inside the `/src` directory, add:
+In order to use `pytest`, add:
 ```
 "python.testing.pytestEnabled": true,
-"python.testing.pytestArgs": ["src"],
 ```
 
 
@@ -102,6 +101,11 @@ Possible fixes:
 - Check the jupyter plugin is installed.
 - Check the pylance plugin is installed and enabled in the settings.
 - Remember enabling the appropriate kernel for the version of python you are using. Sometimes it is not selected by default.
+
+#### **VSCode discovers the tests but fails to import the test module**
+Check that you have an `__init__.py` file in every subfolder up to the script containing the test, or VSCode won't be able to find load it.
+It might run from the console, though.
+
 
 #### **Image build fails when trying to download something from the internet (e.g. during pip install -r requirements) due to conflict with VPN**
 Edit `/etc/docker/daemon.json` (or create it if it doesn't exist) and add `"bip": "172.37.0.1/16"`.
