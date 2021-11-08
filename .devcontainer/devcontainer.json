@@ -7,7 +7,7 @@
 		"context": "..",
 		"args": { 
 			// Update 'VARIANT' to pick a Python version: 3, 3.6, 3.7, 3.8, 3.9
-			"VARIANT": "3.7", // 3.7 necesario para poder usar pip install pyarrow
+			"VARIANT": "3.9",
 			// Options
 			"INSTALL_NODE": "false",
 			"NODE_VERSION": "lts/*"
@@ -38,15 +38,27 @@
 	"extensions": [
 		"ms-python.python",
 		"ms-toolsai.jupyter",
-		"ms-python.vscode-pylance"
+		"ms-python.vscode-pylance",
+		"mechatroner.rainbow-csv",
+		"github.vscode-pull-request-github",
+		"eamodio.gitlens"
+	],
+
+	// Arguments for docker run.
+	"runArgs": [
+		// "--gpus=all"
+		// Uncomment previous line to enable GPU training. May need to install nvidia container toolkit from:
+		// https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#setting-up-nvidia-container-toolkit
+
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [5000],
+	// "forwardPorts": [5000],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "pip3 install --user -r requirements.txt",
 
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	// "remoteUser": "vscode"
+	"remoteUser": "vscode",
+	"containerUser": "vscode",
 }

@@ -5,7 +5,7 @@ ARG VARIANT="3"
 FROM mcr.microsoft.com/vscode/devcontainers/python:0-${VARIANT}
 
 # CUSTOM. Added src to the PYTHONPATH, so it will recognize subfolders as packages:
-ENV PYTHONPATH "${PYTHONPATH}:/src"
+ENV PYTHONPATH "${PYTHONPATH}:/"
 
 # [Option] Install Node.js
 ARG INSTALL_NODE="true"
